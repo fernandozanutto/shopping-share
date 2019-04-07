@@ -1,21 +1,43 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native'
+import {
+    createStackNavigator,
+    createAppContainer,
+    createSwitchNavigator,
+    createBottomTabNavigator
+} from 'react-navigation';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
-    );
-  }
-}
+import UsersScreen from './components/UsersScreen';
+import NewShopScreen from './components/NewShopScreen';
+import LoginScreen from './components/LoginScreen'
+import HomeScreen from './components/HomeScreen'
+
+
+const ShopStackNavigator = createStackNavigator({
+    HomeScreen,
+    NewShopScreen
+})
+
+const UserStackNavigator = createStackNavigator({
+    UsersScreen
+})
+
+const AppTabNavigator = createBottomTabNavigator({
+    Home: ShopStackNavigator,
+    Usuarios: UserStackNavigator
+})
+
+const AppSwitchNavigator = createSwitchNavigator({
+    LoginScreen,
+    AppTabNavigator
+})
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    justifyContent: 'center'
+  }
+})
+
+export default createAppContainer(AppSwitchNavigator)

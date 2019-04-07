@@ -1,0 +1,10 @@
+{
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": "https://7x-nmf.anonymous.shopping-share.exp.direct",
+  "packagerNgrokUrl": "https://packager.7x-nmf.anonymous.shopping-share.exp.direct",
+  "ngrokPid": 5000,
+  "webpackServerPort": null
+}
