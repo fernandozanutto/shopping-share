@@ -25,16 +25,17 @@ const AppTabNavigator = createBottomTabNavigator({
     Home: ShopStackNavigator,
     Usuarios: UserStackNavigator
 }, {
-        tabBarOptions: {
-            /*activeTintColor: '#e91e63',
-            labelStyle: {
-                fontSize: 12,
-            },
-            style: {
-                backgroundColor: 'blue',
-            },*/
-        }
-    })
+    tabBarOptions: {
+        labelStyle: {
+            fontSize: 12,
+            lineHeight: 20,
+        },
+        style: {
+            paddingVertical: 10,
+            backgroundColor: "#fff"
+        },
+    }
+})
 
 const AppSwitchNavigator = createSwitchNavigator({
     LoginScreen,
