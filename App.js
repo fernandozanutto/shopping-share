@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet } from 'react-native'
 import {
     createStackNavigator,
     createAppContainer,
@@ -25,19 +24,21 @@ const UserStackNavigator = createStackNavigator({
 const AppTabNavigator = createBottomTabNavigator({
     Home: ShopStackNavigator,
     Usuarios: UserStackNavigator
-})
+}, {
+        tabBarOptions: {
+            /*activeTintColor: '#e91e63',
+            labelStyle: {
+                fontSize: 12,
+            },
+            style: {
+                backgroundColor: 'blue',
+            },*/
+        }
+    })
 
 const AppSwitchNavigator = createSwitchNavigator({
     LoginScreen,
     AppTabNavigator
-})
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
 })
 
 export default createAppContainer(AppSwitchNavigator)
